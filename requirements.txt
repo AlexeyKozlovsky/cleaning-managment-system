@@ -1,0 +1,4 @@
+PyMongo
+fastapi
+pydantic
+unicorn
