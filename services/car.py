@@ -5,10 +5,12 @@ from models.car import Car
 
 
 async def add_new_car_service(car: Car):
-    db['car'].insert_one(car.dict())
+    car_added_result = db['car'].insert_one(car.dict())
+    car_added = car.dict()
+    car_added['_id'] = str(car_added_result.inserted_id)
     return {
         'message': 'success',
-        'car': car
+        'car': car_added
     }
 
 
