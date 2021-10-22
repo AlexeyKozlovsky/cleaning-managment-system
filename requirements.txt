@@ -2,3 +2,4 @@ PyMongo
 fastapi
 pydantic
 unicorn
+python-dotenv
