@@ -8,10 +8,10 @@ class AdditionalCarInfo(BaseModel):
     manufacture_legal_address: str      # Юридический адрес
     trademark: str                      # Торговая марка
     dimensions: int                     # Габаритные размеры
-    manufacture_date: datetime.datetime # Дата производства
+    manufacture_date: datetime          # Дата производства
     batch_number: str                   # Серийный номер
     GOST: str                           # гост
-    guarantee_period: datetime.datetime # Гарантийный период
+    guarantee_period: datetime          # Гарантийный период
 
 
 class FuelEstimation(BaseModel):
