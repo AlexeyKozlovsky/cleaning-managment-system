@@ -5,9 +5,7 @@ from models.car import Car
 
 
 async def add_new_car_service(car: Car):
-    car_dict = car.dict()
-    car_dict['_id'] = bson.ObjectId(car_dict['_id'])
-    db['car'].insert_one(car_dict)
+    db['car'].insert_one(car.dict())
     return {
         'message': 'success',
         'car': car
