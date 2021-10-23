@@ -37,8 +37,9 @@ async def get_cars_projection(page_number: int = Query(gt=0, default=1),
     return await get_cars_projection_service(page_number, page_limit, projection)
 
 
-@car_router.post('/add')
+@car_router.post('/add/')
 async def add_new_car(car: Car):
+    print(car)
     return await add_new_car_service(car)
 
 
