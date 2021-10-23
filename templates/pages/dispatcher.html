@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="../../static/fonts/font-awesome.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/bootstrap-select.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/jquery.slider.min.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/osm.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/leaflet.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/MarkerCluster.css" type="text/css">
+    <link rel="stylesheet" href="../../static/css/style.css" type="text/css">
+
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+</head>
+
+<body class="page-homepage map-osm" id="page-top" data-spy="scroll" data-target=".navigation" data-offset="90">
+<!-- Wrapper -->
+<div class="wrapper">
+
+    <div class="navigation">
+        <div class="secondary-navigation">
+            <div class="container">
+                <div class="contact">
+                    <figure><strong>Phone:</strong>+7 (800) 450-48-48</figure>
+                    <figure><strong>Email:</strong>itc48@admlr.lipetsk.ru</figure>
+                </div>
+                <div class="user-area">
+                    <img src="../../static/img/snow.png" height="25px" width="25px"> &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;
+                    <img src="../../static/img/sun.png" height="25px" width="25px">
+                    <input type="range" min="0" max="100" step="1" value="50">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <header class="navbar" id="top" role="banner">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand nav" id="brand">
+                        <a href="index-google-map-fullscreen.html"><img src="../../static/img/logo.png" alt="brand" height="50px" width="50px"></a>
+                    </div>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li><button class="btn-pr"><a href="contact.html">Корректировка маршрута</a></button></li>
+                        <li><button><a href="templates/pages/addparam.html">Добавление параметров</a></button></li>
+                        <li><button><a href="contact.html">Корректировка параметров</a></button></li>
+                        <li><button><a href="contact.html">Добавление весов</a></button></li>
+                        <li><button><a href="contact.html">Корректировка весов</a></button></li>
+                        <li><button><a href="contact.html">Добавление новой машины</a></button></li>
+                        <li><button><a href="contact.html">Просмотр запросов на возвращение в гараж</a></button></li>
+                        <li><button><a href="contact.html">Просмотр запросов на чистку дорог</a></button></li>
+                    </ul>
+                </nav><!-- /.navbar collapse-->
+
+            </header><!-- /.navbar -->
+        </div><!-- /.container -->
+    </div><!-- /.navigation -->
+
+
+    <div id="Button_car"><button><img src="../../static/img/car.png"> </button></div>
+    <!-- Map -->
+     <div id="mapid"></div>
+
+    <!-- end Map -->
+
+
+
+
+</div>
+
+<div id="overlay"></div>
+
+<script type="text/javascript" src="../../static/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../../static/js/leaflet.js"></script>
+<script type="text/javascript" src="../../static/js/leaflet.markercluster.js"></script>
+<script type="text/javascript" src="../../static/js/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="../../static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../static/js/smoothscroll.js"></script>
+<script type="text/javascript" src="../../static/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="../../static/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="../../static/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../../static/js/jquery.placeholder.js"></script>
+<script type="text/javascript" src="../../static/js/icheck.min.js"></script>
+<script type="text/javascript" src="../../static/js/jquery.vanillabox-0.1.5.min.js"></script>
+<script type="text/javascript" src="../../static/js/retina-1.1.0.min.js"></script>
+<script type="text/javascript" src="../../static/js/smoothscroll.js"></script>
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+<script>
+    var mymap = L.map('mapid').setView([52.5920624, 39.5245544], 13);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiYWxhbm5vbmUiLCJhIjoiY2t2M3R4MHprNGJpZTJuczdtN2cxMGRxYSJ9.KGT874RF78OPPqwKS7YZWQ'
+}).addTo(mymap);
+
+     let points = [
+        [52.609432, 39.5811687],
+        [52.6095023, 39.5841104],
+    ];
+
+    // iterate through the points to dynamically create the elements
+    for(let i = 0; i < points.length; i++)
+    {
+        // every point creates a circle (node)
+        L.circle(points[i], {radius: 20}).addTo(mymap)
+
+        // every pair of adjacent points creates an edge,
+        // other logic can be implemented
+        if(i + 1 < points.length){
+            L.polyline([points[i], points[i+1]]).addTo(mymap);
+        }
+    }
+</script>
+</body>
+</html>

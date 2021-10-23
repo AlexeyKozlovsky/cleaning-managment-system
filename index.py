@@ -4,6 +4,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 
 from routes.car import car_router
+from routes.renderer import renderer
 from routes.route import route_router
 from routes.prop import prop_router
 from routes.graph import graph_router
@@ -18,6 +19,7 @@ app.include_router(car_router)
 app.include_router(route_router)
 app.include_router(prop_router)
 app.include_router(graph_router)
+app.include_router(renderer)
 
 
 @app.get('/road_graph', include_in_schema=False, response_class=HTMLResponse)

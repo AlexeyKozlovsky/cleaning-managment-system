@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="{{url_for('static', path='fonts/font-awesome.css"')}}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', path='css/bootstrap.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', path='css/bootstrap-select.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', path='css/jquery.slider.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', path='css/owl.carousel.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', path='css/osm.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', path='css/leaflet.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', path='css/MarkerCluster.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', path='css/style.css')}}" type="text/css">
+
+    {% block css_styles %}
+    {% endblock %}
+
+    {% block title %} {% endblock %}
+</head>
+
+{% block content %}
+{% endblock %}
+
+<script type="text/javascript" src="{{url_for('static', path='js/jquery-2.1.0.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/leaflet.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/leaflet.markercluster.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/jquery-migrate-1.2.1.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/smoothscroll.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/owl.carousel.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/bootstrap-select.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/jquery.validate.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/jquery.placeholder.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/icheck.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/jquery.vanillabox-0.1.5.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/retina-1.1.0.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', path='js/smoothscroll.js')}}"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+{% block js_srctipts %}
+{% endblock %}
+
+</body>
+</html>
