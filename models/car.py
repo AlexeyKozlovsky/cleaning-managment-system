@@ -1,4 +1,6 @@
 from datetime import datetime
+from typing import List
+
 from pydantic import BaseModel
 
 
@@ -7,7 +9,7 @@ class AdditionalCarInfo(BaseModel):
     manufacture_name: str               # Имя производителя
     manufacture_legal_address: str      # Юридический адрес
     trademark: str                      # Торговая марка
-    dimensions: int                     # Габаритные размеры
+    dimensions: List[int]               # Габаритные размеры
     manufacture_date: datetime          # Дата производства
     batch_number: str                   # Серийный номер
     GOST: str                           # гост
