@@ -34,7 +34,6 @@ async def get_routes_in_points_service(page_number: int, page_limit: int):
             out_point = road['out_vertics']['coordinates']
 
             route_points.append(in_point)
-            routes_points.append(out_point)
 
         routes_points.append({
             'hex_color': routes[i]['color_hex'],
