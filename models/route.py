@@ -7,5 +7,5 @@ from models.road import Road
 
 
 class Route(BaseModel):
-    roads: List[Road]                       # Список дорог в маршруте
-    actual_car_ids: List[bson.ObjectId]     # ID машин, которые едут по текущему маршруту
+    road_ids: List[str]                       # Список дорог в маршруте
+    car_ids: List[str]     # ID машин, которые едут по текущему маршруту
